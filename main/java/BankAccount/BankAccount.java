@@ -1,6 +1,7 @@
 package BankAccount;
 
 import BankAccountDAO.BankAccountDAO;
+import BankAccountDTO.BankAccountDTO;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,7 +17,17 @@ public class BankAccount {
         bankAccountDAO=bankAccountDao;
     }
 
-    public static void open(String accountNumber) {
+    public static BankAccountDTO open(String accountNumber) {
+        BankAccountDTO account = new BankAccountDTO(accountNumber);
+        bankAccountDAO.save(account);
+        return account;
+    }
+
+    public static BankAccountDTO getAccountNumber(String accountNumber) {
+        return bankAccountDAO.getAccountNumber(accountNumber);  //To change body of created methods use File | Settings | File Templates.
+    }
+
+    public static void deposit(String accountNumber, int i, String deposit) {
 
     }
 }

@@ -10,6 +10,12 @@ package BankAccountDTO;
 public class BankAccountDTO {
     private double balance;
     private String accountNumber;
+
+    public BankAccountDTO(String numberOfNumber) {
+        this.accountNumber=numberOfNumber;
+        this.balance = 0;
+    }
+
     public double getBalance() {
         return balance;  //To change body of created methods use File | Settings | File Templates.
     }
